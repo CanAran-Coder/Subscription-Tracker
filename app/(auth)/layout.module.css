@@ -1,0 +1,9 @@
+
+
+
+.background{
+    background-image: url("../../public/mainBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
