@@ -39,7 +39,7 @@ import { RxCross1 } from "react-icons/rx";
                     <input name="endDate"  type="datetime-local" className="w-full bg-white rounded text-center" />
                     <label className="text-[var(--light-color)] md:text-lg self-start font-bold">Price</label>
                     <input name="price" type="number" className="w-full bg-white rounded text-center" />
-                    
+                    <button className="w-full bg-[var(--light-color)] p-2 rounded md:mt-3 hover:scale-[1.02] duration-300 ease-in-out cursor-pointer">Add Subscription</button>
 
                 </form>
             </section>
