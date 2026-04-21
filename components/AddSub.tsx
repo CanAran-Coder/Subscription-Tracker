@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
- function AddSub({data}:{data:any[]}) {
+import { addSubscription } from "@/lib/addSub";
+import toast from "react-hot-toast";
+import { error } from "console";
+
+
+ function AddSub({data,setShow}:{data:any[],setShow:any}) {
 
     const [logoURL,setLogoURL] = useState(null);
 
@@ -14,17 +19,36 @@ import { RxCross1 } from "react-icons/rx";
             }
             
         }
+
+
+        function handleCross(){
+            setShow(false)
+        }
+
+
+        async function handleSubmit(formData:FormData){
+            const result = await addSubscription(formData)
+            if(result.success){
+                toast.success("Subscription Added Successfully!")
+            }
+            else{
+                if(result.message != undefined){
+                    toast.error(result.message)
+                }
+            }
+        }
+
     return (
         <>
 
             <section className="bg-[rgba(0,0,0,0.7)] inset-0 w-screen h-screen fixed flex justify-center items-center">
-                <form className="border-3 border-white md:w-150 md:h-170 rounded relative flex flex-col justify-center items-center md:px-20">
-                    <RxCross1 className="absolute top-5 right-5 bg-[var(--light-color)] rounded md:text-4xl cursor-pointer" />
+                <form action={handleSubmit} className="border-3 border-white md:w-150 md:h-170 rounded relative flex flex-col justify-center items-center md:px-20">
+                    <RxCross1 onClick={handleCross} className="absolute top-5 right-5 bg-[var(--light-color)] rounded md:text-4xl cursor-pointer" />
                     <h1 className="md:text-3xl font-bold text-[var(--light-color)] mb-10">Add Subscription</h1>
                     <label className="text-[var(--light-color)] md:text-lg self-start font-bold">Category</label>
                     <div className="w-full bg-white rounded text-center flex">
 
-                        <select onChange={handleChange} className="p-2 text-center w-[90%]"> 
+                        <select name="brandName" onChange={handleChange} className="p-2 text-center w-[90%]"> 
                             {data.map((item)=>{
                                 return <option value={item.name} key={item.id}>{item.name}</option>
                             })}

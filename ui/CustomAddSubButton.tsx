@@ -3,7 +3,7 @@ import AddSub from "@/components/AddSub";
 import Loading from "@/components/Loading";
 import style from "@/ui/CustomAddSubButton.module.css"
 import { createClient } from "@/utils/supabase/client";
-import {  useEffect, useState } from "react";
+import {  useState } from "react";
 
 function CustomAddSubButton() {
 
@@ -36,7 +36,9 @@ function CustomAddSubButton() {
         <>
             <button onClick={handleClick} className={`${style.customShadow} bg-[var(--light-color)] rounded md:p-2 font-bold hover:underline cursor-pointer hover:scale-[1.05] ease-in-out duration-300`}>Add Subscription</button>
             {loading && <Loading></Loading>}
-            {loading == false && <AddSub data={data}/>}
+            {show && data.length > 0 && (
+                <AddSub setShow={setShow} data={data}/>
+            )}
             
         </>
         
