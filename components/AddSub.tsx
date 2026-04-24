@@ -5,7 +5,6 @@ import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { addSubscription } from "@/lib/addSub";
 import toast from "react-hot-toast";
-import { error } from "console";
 
 
  function AddSub({data,setShow}:{data:any[],setShow:any}) {

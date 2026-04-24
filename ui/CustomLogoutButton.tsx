@@ -1,11 +1,14 @@
 'use client'
 import style from "@/ui/CustomLogoutButton.module.css"
 import { createClient } from "@/utils/supabase/client";
+import { useRouter } from "next/navigation";
 function CustomLogoutButton() {
-
+    const navigate = useRouter()
     async function handleClick(){
         const supabase = createClient();
         const result = await supabase.auth.signOut();
+        navigate.push("/")
+
     }
 
     return ( 

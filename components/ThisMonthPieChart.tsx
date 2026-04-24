@@ -13,10 +13,10 @@ function ThisMonthPieChart({ data }: { data: any[] }) {
     }
 
     const chartsData = {
-        labels:data.map((item) => item.sub_cat.name),
+        labels:data.map((item) => item.sub_cat?.name),
         datasets:[{
             label:"Price",
-            data:data.map((item) => item.price),
+            data:data.map((item) => Number(item.price)),
             backgroundColor:getColors(data.length),
             borderWidth:1
         }]
@@ -29,7 +29,7 @@ function ThisMonthPieChart({ data }: { data: any[] }) {
     return (
         <div className="w-full h-full flex flex-col gap-10 justify-center items-center ">
             <h1 className="text-center px-3 font-bold md:text-3xl bg-[var(--dark-color)] text-[var(--light-color)] rounded ">This Month:{totalPrice}</h1>
-            <div className="w-full overflow-hidden  flex justify-center items-center md:h-150"><Pie data={chartsData}/></div>
+            <div className="w-full overflow-hidden flex justify-center items-center md:h-150"><Pie data={chartsData}/></div>
             
         </div>
     )

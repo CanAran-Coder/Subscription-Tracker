@@ -1,5 +1,6 @@
 'use server'
 import { createClient } from "@/utils/supabase/server";
+import { revalidatePath } from "next/cache";
 
 
 export async function addSubscription(formData:FormData){
@@ -26,7 +27,9 @@ export async function addSubscription(formData:FormData){
         return {success:false,message:error.message}
     }
     else{
+        revalidatePath("/subscriptions")
         return{success:true}
+        
     }
 
 

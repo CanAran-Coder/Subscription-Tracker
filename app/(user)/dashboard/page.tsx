@@ -1,7 +1,6 @@
 import ThisMonthPieChart from "@/components/ThisMonthPieChart";
 import YearlyBarCharts from "@/components/YearlyBarCharts";
 import { createClient } from "@/utils/supabase/server";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 async function Dashboard() {
 
@@ -30,14 +29,14 @@ async function Dashboard() {
     }
 
 
-
+    const theData:any[]|null = await ThisYearData()
 
     const yearlyData = await ThisYearData();
 
 
     return (<>
         <section className="flex-1 grid grid-cols-2">
-            <ThisMonthPieChart data={ThisMonthData()} />
+            {theData ? <ThisMonthPieChart data={theData}></ThisMonthPieChart>: ""}
             {yearlyData ? <YearlyBarCharts data={yearlyData}/> : ""}
         </section>
         
