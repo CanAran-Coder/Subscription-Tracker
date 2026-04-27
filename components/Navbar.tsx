@@ -38,55 +38,63 @@ function Navbar() {
     }, [])
 
 
-    function handleLogoClick(){
+    function handleLogoClick() {
 
         navigate.push("/")
-        
+
 
 
     }
 
 
-    if(loading){
-        return <Loading/>
+    if (loading) {
+        return <Loading />
     }
     return (
         <>
 
-            <nav className={`${style.customShadow} md:h-15 bg-[var(--dark-color)] grid grid-cols-3`}>
+            <nav className={`${style.customShadow} hidden md:h-15 bg-[var(--dark-color)] md:grid md:grid-cols-[1fr_2fr_1fr]`}>
                 <section className="banner flex items-center justify-start mx-3 gap-2">
                     <div onClick={handleLogoClick} className="w-20 cursor-pointer h-[75%] relative p-2">
-                        <Image  src={"/logo.jpg"} alt="picture of the logo" className="rounded" fill priority></Image>
+                        <Image src={"/logo.jpg"} alt="picture of the logo" className="rounded" fill priority></Image>
                     </div>
                     <h1 className="text-[var(--light-color)] font-bold md:text-xl">Subscription Tracker</h1>
                 </section>
                 <section className="options flex justify-center items-center gap-2">
 
                     {user && (
-                        
+
                         <>
                             <CustomRedirectButton href="/dashboard">Dashboard</CustomRedirectButton>
                             <CustomRedirectButton href="/subscriptions">Subscriptions</CustomRedirectButton>
-                            <CustomAddSubButton/>
+                            <CustomAddSubButton />
                         </>
-                
-                        
-                
-                ) }
+
+
+
+                    )}
 
 
                 </section>
                 <section className="auth flex items-center justify-end mx-3 gap-2">
 
-                    {user ? <CustomLogoutButton/> : (
-                        <>
-                            <CustomRedirectButton href="/login">Login</CustomRedirectButton>
-                            <CustomRedirectButton href="/register">Register</CustomRedirectButton>
-                            
-                        </>
-                       
+                    {user ?
+                        <div className="w-full h-full flex  justify-center gap-10 items-center">
+                            <p className="text-[var(--light-color)] md:text-lg font-bold">{user.email.split("@")[0]}</p>
+                            <CustomLogoutButton />
+                        </div>
 
-                    )}
+
+                        : (
+                            <>
+                            
+                                <CustomRedirectButton href="/login">Log in</CustomRedirectButton>
+                                <CustomRedirectButton href="/register">Register</CustomRedirectButton>
+
+                            </>
+
+
+                        )}
 
 
                 </section>

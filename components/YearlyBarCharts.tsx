@@ -55,7 +55,7 @@ function YearlyBarCharts({ data }: { data: any[] }) {
     })
 
     return (<>
-        <div className="w-full h-full flex flex-col gap-10 justify-center  items-center overflow-hidden ">
+        <div className="w-full h-full flex p-5 mt-2 flex-col  md:gap-10 justify-center  items-center overflow-hidden ">
             <h1 className="text-center px-3 font-bold md:text-3xl bg-[var(--dark-color)] text-[var(--light-color)] rounded ">All Subscriptions:{totalPrice}</h1>
             <div className="flex justify-center overflow-hidden items-center w-full h-120 px-5">
                 <Bar data={chartData} options={options} />

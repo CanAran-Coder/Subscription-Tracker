@@ -15,7 +15,7 @@ function CustomLogoutButton() {
 
         <>
         
-            <button onClick={handleClick} className={`${style.customShadow} bg-[var(--light-color)] rounded md:p-2 font-bold hover:underline cursor-pointer hover:scale-[1.1] ease-in-out duration-300`}>Logout</button>
+            <button onClick={handleClick} className={`${style.customShadow} p-2 bg-[var(--light-color)] rounded md:p-2 font-bold hover:underline cursor-pointer hover:scale-[1.1] ease-in-out duration-300`}>Logout</button>
         
         </>
 

@@ -40,10 +40,10 @@ import toast from "react-hot-toast";
     return (
         <>
 
-            <section className="bg-[rgba(0,0,0,0.7)] inset-0 w-screen h-screen fixed flex justify-center items-center">
-                <form action={handleSubmit} className="border-3 border-white md:w-150 md:h-170 rounded relative flex flex-col justify-center items-center md:px-20">
-                    <RxCross1 onClick={handleCross} className="absolute top-5 right-5 bg-[var(--light-color)] rounded md:text-4xl cursor-pointer" />
-                    <h1 className="md:text-3xl font-bold text-[var(--light-color)] mb-10">Add Subscription</h1>
+            <section className="bg-[rgba(0,0,0,0.7)]  inset-0 w-screen h-screen fixed flex justify-center items-center">
+                <form action={handleSubmit} className="border-3 gap-1 border-white p-8  md:w-150 md:h-170 rounded relative flex flex-col justify-center items-center md:px-20">
+                    <RxCross1 onClick={handleCross} className="absolute text-2xl top-2 right-2 md:top-5 md:right-5 bg-[var(--light-color)] rounded md:text-4xl cursor-pointer" />
+                    <h1 className="text-2xl md:text-3xl font-bold text-[var(--light-color)] mb-10">Add Subscription</h1>
                     <label className="text-[var(--light-color)] md:text-lg self-start font-bold">Category</label>
                     <div className="w-full bg-white rounded text-center flex">
 

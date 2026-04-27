@@ -34,7 +34,8 @@ function CustomAddSubButton() {
 
     return (
         <>
-            <button onClick={handleClick} className={`${style.customShadow} bg-[var(--light-color)] rounded md:p-2 font-bold hover:underline cursor-pointer hover:scale-[1.05] ease-in-out duration-300`}>Add Subscription</button>
+            <button onClick={handleClick} className={`${style.customShadow} bg-[var(--light-color)] rounded p-2  md:p-2 font-bold  hover:underline cursor-pointer hover:scale-[1.05] ease-in-out duration-300 md:hidden lg:block`}>Add Subscription</button>
+            <button onClick={handleClick} className={`hidden ${style.customShadow} bg-[var(--light-color)] rounded p-2  md:p-2 font-bold  hover:underline cursor-pointer hover:scale-[1.05] ease-in-out duration-300 md:block lg:hidden `}>Add New Sub</button>
             {loading && <Loading></Loading>}
             {show && data.length > 0 && (
                 <AddSub setShow={setShow} data={data}/>

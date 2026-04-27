@@ -1,5 +1,8 @@
 import ThisMonthPieChart from "@/components/ThisMonthPieChart";
 import YearlyBarCharts from "@/components/YearlyBarCharts";
+import CustomAddSubButton from "@/ui/CustomAddSubButton";
+import CustomLogoutButton from "@/ui/CustomLogoutButton";
+import CustomRedirectButton from "@/ui/CustomRedirectButton";
 import { createClient } from "@/utils/supabase/server";
 
 async function Dashboard() {
@@ -35,9 +38,14 @@ async function Dashboard() {
 
 
     return (<>
-        <section className="flex-1 grid grid-cols-2">
+        <section className=" flex flex-col justify-center items-center flex-1 md:grid md:grid-cols-2">
             {theData ? <ThisMonthPieChart data={theData}></ThisMonthPieChart>: ""}
             {yearlyData ? <YearlyBarCharts data={yearlyData}/> : ""}
+            <div className="flex justify-center items-center gap-1 pb-2 w-full md:hidden">
+                <CustomAddSubButton/>
+                <CustomRedirectButton href="/subscriptions">Subscriptions</CustomRedirectButton>
+                <CustomLogoutButton></CustomLogoutButton>
+            </div>
         </section>
         
     </>);   

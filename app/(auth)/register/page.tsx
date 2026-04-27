@@ -2,6 +2,7 @@
 import { LoginAction, RegisterAction } from "@/auth/actions";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 function Register() {
 
@@ -35,14 +36,14 @@ function Register() {
 
     return (<>
 
-        <form action={handleSubmit} className="bg-[rgba(0,0,0,0.4)] flex  md:w-150 md:h-150 md:border-2 border-[var(--light-color)] justify-center items-center rounded flex-col md:px-20 md:pb-18">
-            <h1 className="md:text-3xl font-bold text-[var(--light-color)] mb-10">Register</h1>
+        <form action={handleSubmit} className="bg-[rgba(0,0,0,0.4)] p-5 flex  md:w-150 md:h-150 md:border-2 border-[var(--light-color)] justify-center items-center rounded flex-col md:px-20 md:pb-18">
+            <h1 className="md:text-3xl text-2xl font-bold text-[var(--light-color)] mb-10">Register</h1>
             <label className="text-[var(--light-color)] md:text-lg self-start font-bold">E-Mail</label>
             <input name="email" className="w-full bg-white rounded text-center" />
             <label className="text-[var(--light-color)] md:text-lg self-start font-bold">Password</label>
             <input type="password" name="password" className="w-full bg-white rounded text-center" />
             <button type="submit" className="bg-[var(--light-color)] rounded font-bold md:text-lg md:px-4 py-2 hover:scale-[1.02] ease-in-out duration-300 cursor-pointer w-full mt-3">Register</button>
-
+            <Link href={"/login"} className="underline italic text-[var(--light-color)]">Do you have an account?</Link>
         </form>
 
     </>);
