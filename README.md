@@ -1,22 +1,22 @@
-# 🚀 Subscription Tracker (Full-Stack)
+# 💰Subscription Tracker (Full-Stack)
 
-A modern, full-stack web application designed to help users manage, track, and optimize their recurring subscriptions and monthly expenses.
+A modern, full stack web application to manage your subscriptions and save your money.
 
 ## 🌟 Key Features
-*   **User Authentication:** Secure login and sign-up (OAuth/Email-Password).
-*   **Dynamic Dashboard:** Real-time statistics on monthly spending and upcoming renewals.
+*   **User Authentication:** Secure login and sign-up (Email-Password).
+*   **Istatistical Dashboard:** Charts make it easy to understand.
 *   **Subscription Management:** Full CRUD operations for tracking various services.
 *   **Notification System:** Alerts before a subscription expires or renews.
 *   **Responsive Design:** Optimized for both mobile and desktop views.
 
 ## 🛠 Tech Stack
-*   **Frontend:** React.js / Next.js, Tailwind CSS, Lucide Icons
-*   **Backend:** Node.js / Hono or Next.js API Routes
-*   **Database:** PostgreSQL (Prisma/Drizzle) or MongoDB
-*   **Authentication:** Clerk / NextAuth / Supabase Auth
+*   **Languages:** Typescript
+*   **Frontend:** React.js / Next.js, Tailwind CSS, React Icons
+*   **Backend:** Nextjs, Supabase
+*   **Database:** Supabase(PostgreSQL)
+*   **Authentication:** Supabase Auth
 
-## 🚀 Getting Started
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/username/subscription-tracker.git](https://github.com/username/subscription-tracker.git)
+## System Architecture
+#   **Why Supabase?:** I chose Supabase for this project because of its industry-standard capabilities. Its ecosystem allowed me to focus on building features rather than managing infrastructure, making it an ideal choice for rapid development.
+#   **Why Next.js?:** I chose Next.js because it allows me to manage both frontend and backend seemlessly within a unified stack, laveraging industry-standard capabilities.
+# **Only Typescript:** Typescript is the most popular and powerful web language.By using it across the entire stack, I’ve eliminated unnecessary complexity in favor of minimalism.
