@@ -17,6 +17,6 @@ A modern, full stack web application to manage your subscriptions and save your 
 *   **Authentication:** Supabase Auth
 
 ## System Architecture
-#   **Why Supabase?:** I chose Supabase for this project because of its industry-standard capabilities. Its ecosystem allowed me to focus on building features rather than managing infrastructure, making it an ideal choice for rapid development.
-#   **Why Next.js?:** I chose Next.js because it allows me to manage both frontend and backend seemlessly within a unified stack, laveraging industry-standard capabilities.
-# **Only Typescript:** Typescript is the most popular and powerful web language.By using it across the entire stack, I’ve eliminated unnecessary complexity in favor of minimalism.
+*   **Why Supabase?:** I chose Supabase for this project because of its industry-standard capabilities. Its ecosystem allowed me to focus on building features rather than managing infrastructure, making it an ideal choice for rapid development.
+*   **Why Next.js?:** I chose Next.js because it allows me to manage both frontend and backend seemlessly within a unified stack, laveraging industry-standard capabilities.
+* **Only Typescript:** Typescript is the most popular and powerful web language.By using it across the entire stack, I’ve eliminated unnecessary complexity in favor of minimalism.
